@@ -1,0 +1,7 @@
+name "sdl3-stbtt-example-d"
+targetType "executable"
+mainSourceFile "src/main.d"
+sourceFiles "src/lib/sdl3/stbtt.c"
+preBuildCommands "if [ ! -e stb ]; then git clone --depth 1 https://github.com/nothings/stb.git; fi"
+libs "sdl3"
+cImportPaths "${SDL_INC_PATH}" "."
