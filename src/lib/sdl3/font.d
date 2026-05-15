@@ -215,7 +215,7 @@ auto test() {
   auto str1_left = 10;
   auto str1_top = 0;
   auto color1 = Color.black;
-  auto txt1 = new Text(font, str1, str1_left, str1_top, font_size1, color1);
+  auto txt1 = new Text(win, font, str1, str1_left, str1_top, font_size1, color1);
 
   auto font_size2 = 32;
   auto str2 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ:";
@@ -223,7 +223,7 @@ auto test() {
   auto str2_top = 60;
   // auto color2 = Color.black;
   auto color2 = Color.green;
-  auto txt2 = new Text(font, str2, str2_left, str2_top, font_size2, color2);
+  auto txt2 = new Text(win, font, str2, str2_left, str2_top, font_size2, color2);
 
   auto font_size3 = 64;
   auto str3 = "こんにちは世界。";
@@ -231,7 +231,7 @@ auto test() {
   auto str3_top = 120;
   // auto color3 = Color.black;
   auto color3 = Color.blue;
-  auto txt3 = new Text(font, str3, str3_left, str3_top, font_size3, color3);
+  auto txt3 = new Text(win, font, str3, str3_left, str3_top, font_size3, color3);
 
   auto font_size4 = 24;
   auto str4 = "あいうえおかきくけこさしすせそたちつてと、；’｀";
@@ -239,7 +239,7 @@ auto test() {
   auto str4_top = 200;
   // auto color4 = Color.black;
   auto color4 = Color.magenta;
-  auto txt4 = new Text(font, str4, str4_left, str4_top, font_size4, color4);
+  auto txt4 = new Text(win, font, str4, str4_left, str4_top, font_size4, color4);
 
   auto font_size5 = 18;
   auto str5 = "春はあけぼの";
@@ -248,14 +248,14 @@ auto test() {
   // auto color5 = Color.black;
   // auto color5 = Color.white;
   auto color5 = Color.red;
-  auto txt5 = new Text(font, str5, str5_left, str5_top, font_size5, color5);
+  auto txt5 = new Text(win, font, str5, str5_left, str5_top, font_size5, color5);
 
   auto font_size6 = 15;
   auto str6 = "テキストラベル: ";
   auto str6_left = 10;
   auto str6_top = 280;
   auto color6 = Color.black;
-  auto txt6 = new Text(font, str6, str6_left, str6_top, font_size6, color6);
+  auto txt6 = new Text(win, font, str6, str6_left, str6_top, font_size6, color6);
 
   SDL_Event event;
   auto quit = false;
@@ -269,12 +269,12 @@ auto test() {
 
     win.clear();
 
-    txt1.draw(win);
-    txt2.draw(win);
-    txt3.draw(win);
-    txt4.draw(win);
-    txt5.draw(win);
-    txt6.draw(win);
+    txt1.draw();
+    txt2.draw();
+    txt3.draw();
+    txt4.draw();
+    txt5.draw();
+    txt6.draw();
 
     win.render_present();
 

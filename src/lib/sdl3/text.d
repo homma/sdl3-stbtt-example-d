@@ -8,12 +8,17 @@ class Text {
 
   uint pixel_size = 0;
 
+  Window win;
+
   Font font;
   string str;
 
   SDL_Color color;
 
-  this(Font font, string str, float left, float top, uint size, SDL_Color color) {
+  SDL_Texture* texture;
+
+  this(Window win, Font font, string str, float left, float top, uint size, SDL_Color color) {
+    this.win = win;
     this.font = font;
     this.str = str;
     this.left = left;
@@ -22,6 +27,7 @@ class Text {
     this.color = color;
 
     font.set_pixel_size(size);
+    create_texture();
   }
 
   auto get_text_bounds() {
@@ -45,7 +51,7 @@ class Text {
     return SDL_Point(txt_width, txt_height);
   }
 
-  auto draw(Window win) {
+  auto create_texture() {
     font.set_pixel_size(pixel_size);
 
     auto bounds = get_text_bounds();
@@ -67,8 +73,10 @@ class Text {
         kern = font.get_kerning(prev_ch, char_code);
       }
 
-      // src
+      // get glyph
       auto glyph = font.get_glyph(char_code);
+
+      // source rect
       auto src_rect = null; // use whole
 
       // change color upon blit
@@ -77,7 +85,7 @@ class Text {
       // change blend mode
       SDL_SetSurfaceBlendMode(glyph.surface, SDL_BLENDMODE_BLEND_PREMULTIPLIED);
 
-      // tgt
+      // target rect
       auto tgt_x = tgt_left + kern + glyph.left;
       auto tgt_y = glyph.y;
       auto tgt_w = glyph.surface.w;
@@ -92,11 +100,13 @@ class Text {
     }
 
     // texture
-    auto texture = SDL_CreateTextureFromSurface(win.ren, tgt_surface);
+    texture = SDL_CreateTextureFromSurface(win.ren, tgt_surface);
+  }
 
+  auto draw() {
     // draw texture
-    auto src_rect = SDL_FRect(0f, 0f, tgt_surface.w, tgt_surface.h);
-    auto dest_rect = SDL_FRect(left, top, tgt_surface.w, tgt_surface.h);
-    SDL_RenderTexture(win.ren, texture, &src_rect, &dest_rect);
+    auto src_rect = null; // use whole
+    auto dest_rect = SDL_FRect(left, top, texture.w, texture.h);
+    SDL_RenderTexture(win.ren, texture, src_rect, &dest_rect);
   }
 }
