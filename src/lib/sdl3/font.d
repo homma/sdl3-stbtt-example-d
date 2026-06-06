@@ -212,50 +212,50 @@ auto test() {
 
   auto font_size1 = 42;
   auto str1 = "abcdefghijklmnopqrstuvwxyz;";
-  auto str1_left = 10;
-  auto str1_top = 0;
+  auto left1 = 10;
+  auto top1 = 0;
   auto color1 = Color.black;
-  auto txt1 = new Text(win, font, str1, str1_left, str1_top, font_size1, color1);
+  auto txt1 = new Text(win, font, str1, font_size1, color1);
 
   auto font_size2 = 32;
   auto str2 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ:";
-  auto str2_left = 10;
-  auto str2_top = 60;
+  auto left2 = 10;
+  auto top2 = 60;
   // auto color2 = Color.black;
   auto color2 = Color.green;
-  auto txt2 = new Text(win, font, str2, str2_left, str2_top, font_size2, color2);
+  auto txt2 = new Text(win, font, str2, font_size2, color2);
 
   auto font_size3 = 64;
   auto str3 = "こんにちは世界。";
-  auto str3_left = 80;
-  auto str3_top = 120;
+  auto left3 = 80;
+  auto top3 = 120;
   // auto color3 = Color.black;
   auto color3 = Color.blue;
-  auto txt3 = new Text(win, font, str3, str3_left, str3_top, font_size3, color3);
+  auto txt3 = new Text(win, font, str3, font_size3, color3);
 
   auto font_size4 = 24;
   auto str4 = "あいうえおかきくけこさしすせそたちつてと、；’｀";
-  auto str4_left = 10;
-  auto str4_top = 200;
+  auto left4 = 10;
+  auto top4 = 200;
   // auto color4 = Color.black;
   auto color4 = Color.magenta;
-  auto txt4 = new Text(win, font, str4, str4_left, str4_top, font_size4, color4);
+  auto txt4 = new Text(win, font, str4, font_size4, color4);
 
   auto font_size5 = 18;
   auto str5 = "春はあけぼの";
-  auto str5_left = 10;
-  auto str5_top = 250;
+  auto left5 = 10;
+  auto top5 = 250;
   // auto color5 = Color.black;
   // auto color5 = Color.white;
   auto color5 = Color.red;
-  auto txt5 = new Text(win, font, str5, str5_left, str5_top, font_size5, color5);
+  auto txt5 = new Text(win, font, str5, font_size5, color5);
 
   auto font_size6 = 15;
   auto str6 = "テキストラベル: ";
-  auto str6_left = 10;
-  auto str6_top = 280;
+  auto left6 = 10;
+  auto top6 = 280;
   auto color6 = Color.black;
-  auto txt6 = new Text(win, font, str6, str6_left, str6_top, font_size6, color6);
+  auto txt6 = new Text(win, font, str6, font_size6, color6);
 
   SDL_Event event;
   auto quit = false;
@@ -269,12 +269,12 @@ auto test() {
 
     win.clear();
 
-    txt1.draw();
-    txt2.draw();
-    txt3.draw();
-    txt4.draw();
-    txt5.draw();
-    txt6.draw();
+    txt1.draw(left1, top1);
+    txt2.draw(left2, top2);
+    txt3.draw(left3, top3);
+    txt4.draw(left4, top4);
+    txt5.draw(left5, top5);
+    txt6.draw(left6, top6);
 
     win.render_present();
 

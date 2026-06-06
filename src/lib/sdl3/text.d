@@ -3,9 +3,6 @@ import window;
 import font;
 
 class Text {
-  float left = 0;
-  float top = 0;
-
   uint pixel_size = 0;
 
   Window win;
@@ -17,12 +14,10 @@ class Text {
 
   SDL_Texture* texture;
 
-  this(Window win, Font font, string str, float left, float top, uint size, SDL_Color color) {
+  this(Window win, Font font, string str, uint size, SDL_Color color) {
     this.win = win;
     this.font = font;
     this.str = str;
-    this.left = left;
-    this.top = top;
     this.pixel_size = size;
     this.color = color;
 
@@ -103,7 +98,15 @@ class Text {
     texture = SDL_CreateTextureFromSurface(win.ren, tgt_surface);
   }
 
-  auto draw() {
+  auto texture_width() {
+    return texture.w;
+  }
+
+  auto texture_height() {
+    return texture.h;
+  }
+
+  auto draw(float left, float top) {
     // draw texture
     auto src_rect = null; // use whole
     auto dest_rect = SDL_FRect(left, top, texture.w, texture.h);
