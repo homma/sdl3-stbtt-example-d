@@ -99,11 +99,19 @@ class Text {
   }
 
   auto texture_width() {
-    return texture.w;
+    if (texture) {
+      return texture.w;
+    }
+
+    return 0;
   }
 
   auto texture_height() {
-    return texture.h;
+    if (texture) {
+      return texture.h;
+    }
+
+    return 0;
   }
 
   auto draw(float left, float top) {
