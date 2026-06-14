@@ -12,14 +12,20 @@ immutable auto yellow = SDL_Color(255, 255, 0);
 immutable auto cyan = SDL_Color(0, 255, 255);
 
 // Gray
-immutable auto gray0 = SDL_Color(30, 30, 30);
-immutable auto gray1 = SDL_Color(60, 60, 60);
-immutable auto gray2 = SDL_Color(90, 90, 90);
-immutable auto gray3 = SDL_Color(120, 120, 120);
-immutable auto gray4 = SDL_Color(150, 150, 150);
-immutable auto gray5 = SDL_Color(180, 180, 180);
-immutable auto gray6 = SDL_Color(210, 210, 210);
-immutable auto gray7 = SDL_Color(240, 240, 240);
+immutable auto gray1 = SDL_Color(238, 238, 238);
+immutable auto gray2 = SDL_Color(221, 221, 221);
+immutable auto gray3 = SDL_Color(204, 204, 204);
+immutable auto gray4 = SDL_Color(187, 187, 187);
+immutable auto gray5 = SDL_Color(170, 170, 170);
+immutable auto gray6 = SDL_Color(153, 153, 153);
+immutable auto gray7 = SDL_Color(136, 136, 136);
+immutable auto gray8 = SDL_Color(119, 119, 119);
+immutable auto gray9 = SDL_Color(102, 102, 102);
+immutable auto gray10 = SDL_Color(85, 85, 85);
+immutable auto gray11 = SDL_Color(68, 68, 68);
+immutable auto gray12 = SDL_Color(51, 51, 51);
+immutable auto gray13 = SDL_Color(34, 34, 34);
+immutable auto gray14 = SDL_Color(17, 17, 17);
 
 // Pink
 immutable auto MediumVioletRed = SDL_Color(199, 21, 133);
